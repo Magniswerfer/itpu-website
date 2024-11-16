@@ -1,4 +1,5 @@
 import Layout from "../components/Layout.tsx";
+import GreenBreaker from "../components/GreenBreaker.tsx"
 
 export default function HomePage() {
   return (
@@ -8,7 +9,7 @@ export default function HomePage() {
         <div className="bg-enl-red h-72 relative overflow-hidden">
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-2xl mx-auto px-4">
-              <div className="h-1 w-24 bg-enl-green mb-4" />
+              <GreenBreaker/>
               <h1 className="text-4xl md:text-5xl text-white font-bold mb-4">
                 IT-POLITISK UDVALG
               </h1>
@@ -84,7 +85,7 @@ export default function HomePage() {
               demokratisk kontrol?
             </p>
             <a
-              href="/sager/ai"
+              href="/aktuelle-sager/ai"
               className="text-enl-red hover:text-enl-red-dark font-bold"
             >
               Læs mere →
@@ -97,7 +98,7 @@ export default function HomePage() {
               kontrol.
             </p>
             <a
-              href="/sager/infrastruktur"
+              href="/aktuelle-sager/infrastruktur"
               className="text-enl-red hover:text-enl-red-dark font-bold"
             >
               Læs mere →
@@ -109,7 +110,7 @@ export default function HomePage() {
               Opgør med tech-giganternes magt og kontrol over vores data.
             </p>
             <a
-              href="/sager/tech-monopoler"
+              href="/aktuelle-sager/tech-monopoler"
               className="text-enl-red hover:text-enl-red-dark font-bold"
             >
               Læs mere →

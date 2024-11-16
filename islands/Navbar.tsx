@@ -4,43 +4,49 @@ import { Menu, X } from "lucide-preact";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  type MenuItem = {
+    href: string;
+    label: string;
+  };
+
+  // Menu items array
+  const menuItems: MenuItem[] = [
+    { href: "/aktuelle-sager", label: "Aktuelle Sager"},
+    { href: "/politik", label: "Politik" },
+    { href: "/om-os", label: "Om os" },
+    { href: "/kalender", label: "Kalender" },
+    { href: "/kontakt", label: "Kontakt" },
+  ];
+
   return (
-    <nav className="bg-enl-red text-white">
+    <nav className="bg-enl-green-dark text-white">
       {/* Main navbar container */}
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo area */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-xl font-bold">ENHEDSLISTEN</span>
+            <a href="/" className="text-xl font-bold px-3 py-2 rounded-md inline-flex items-center">
+              <img
+                src="/images/LogoSquare.svg"
+                alt="ITPU Logo"
+                className="h-8 w-8 mr-2"  // made slightly smaller and added margin-right
+              />
+              ITPU
+            </a>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="hover:bg-white/10 px-3 py-2 rounded-md">
-              Forside
-            </a>
-            <a
-              href="/politik"
-              className="hover:bg-white/10 px-3 py-2 rounded-md"
-            >
-              Politik
-            </a>
-            <a href="/om-os" className="hover:bg-white/10 px-3 py-2 rounded-md">
-              Om os
-            </a>
-            <a
-              href="/kalender"
-              className="hover:bg-white/10 px-3 py-2 rounded-md"
-            >
-              Kalender
-            </a>
-            <a
-              href="/kontakt"
-              className="hover:bg-white/10 px-3 py-2 rounded-md"
-            >
-              Kontakt
-            </a>
-          </div>
+                {menuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className={"px-3 py-2 rounded-md hover:bg-enl-green"}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
